@@ -33,7 +33,6 @@
 
         .app-wrapper { display: flex; height: 100vh; width: 100vw; }
 
-        /* --- SIDEBAR (SCROLLABLE) --- */
         .sidebar {
             width: 290px; background: var(--sidebar-bg);
             border-right: 1px solid var(--card-border);
@@ -42,17 +41,13 @@
             overflow-y: auto; height: 100%;
         }
 
-        .sidebar::-webkit-scrollbar { width: 5px; }
-        .sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-
         .logo {
             display: flex; align-items: center; gap: 12px;
             font-size: 1.4rem; font-weight: 800;
             color: var(--primary-blue); margin-bottom: 30px;
-            flex-shrink: 0;
         }
 
-        .nav-group { margin-bottom: 30px; flex-shrink: 0; }
+        .nav-group { margin-bottom: 30px; }
         .nav-item {
             display: flex; align-items: center; padding: 10px 12px;
             border-radius: 8px; color: var(--text-light);
@@ -61,7 +56,7 @@
         }
         .nav-item.active { background: #eff6ff; color: var(--primary-blue); font-weight: 600; }
 
-        .filter-section { margin-bottom: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px; flex-shrink: 0; }
+        .filter-section { margin-bottom: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
         .filter-header {
             font-size: 0.7rem; text-transform: uppercase;
             letter-spacing: 0.05em; color: #94a3b8;
@@ -82,7 +77,6 @@
             border-radius: 6px; font-family: inherit; font-size: 0.85rem; outline: none;
         }
 
-        /* --- MAIN CONTENT --- */
         .main-container { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 
         .top-bar {
@@ -130,7 +124,6 @@
             display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8;
         }
         .source-link { color: var(--primary-blue); font-weight: 700; text-decoration: none; }
-        .source-link:hover { text-decoration: underline; }
 
         .spinner {
             width: 16px; height: 16px; border: 2px solid white; border-top: 2px solid transparent;
@@ -154,47 +147,43 @@
             <div class="nav-item" id="nav-archive" onclick="switchView('archive')">Archive (3M - 1Y)</div>
         </nav>
 
-        <!-- AGENCIES -->
         <div class="filter-section">
             <div class="filter-header">Agencies</div>
-            <label class="filter-label"><input type="checkbox" checked value="US FDA" class="agency-cb"> US FDA</label>
-            <label class="filter-label"><input type="checkbox" checked value="EMA (EU)" class="agency-cb"> EMA (EU)</label>
-            <label class="filter-label"><input type="checkbox" checked value="NMPA (China)" class="agency-cb"> NMPA (China)</label>
-            <label class="filter-label"><input type="checkbox" checked value="MHRA (UK)" class="agency-cb"> MHRA (UK)</label>
-            <label class="filter-label"><input type="checkbox" checked value="PMDA (Japan)" class="agency-cb"> PMDA (Japan)</label>
-            <label class="filter-label"><input type="checkbox" checked value="TGA (Australia)" class="agency-cb"> TGA (Australia)</label>
+            <label class="filter-label"><input type="checkbox" checked value="US FDA" class="filter-cb agency-cb"> US FDA</label>
+            <label class="filter-label"><input type="checkbox" checked value="EMA (EU)" class="filter-cb agency-cb"> EMA (EU)</label>
+            <label class="filter-label"><input type="checkbox" checked value="NMPA (China)" class="filter-cb agency-cb"> NMPA (China)</label>
+            <label class="filter-label"><input type="checkbox" checked value="MHRA (UK)" class="filter-cb agency-cb"> MHRA (UK)</label>
+            <label class="filter-label"><input type="checkbox" checked value="PMDA (Japan)" class="filter-cb agency-cb"> PMDA (Japan)</label>
+            <label class="filter-label"><input type="checkbox" checked value="TGA (Australia)" class="filter-cb agency-cb"> TGA (Australia)</label>
         </div>
 
-        <!-- INDUSTRY SEGMENT -->
         <div class="filter-section">
             <div class="filter-header">Industry Segment</div>
-            <label class="filter-label"><input type="checkbox" checked value="Cell & Gene Therapy" class="ind-cb"> Cell & Gene Therapy</label>
-            <label class="filter-label"><input type="checkbox" checked value="Biopharma" class="ind-cb"> Biopharma</label>
-            <label class="filter-label"><input type="checkbox" checked value="Biotech" class="ind-cb"> Biotech</label>
-            <label class="filter-label"><input type="checkbox" checked value="MedTech" class="ind-cb"> MedTech</label>
-            <label class="filter-label"><input type="checkbox" checked value="General Healthcare" class="ind-cb"> General Healthcare</label>
+            <label class="filter-label"><input type="checkbox" checked value="Cell & Gene Therapy" class="filter-cb ind-cb"> Cell & Gene Therapy</label>
+            <label class="filter-label"><input type="checkbox" checked value="Biopharma" class="filter-cb ind-cb"> Biopharma</label>
+            <label class="filter-label"><input type="checkbox" checked value="Biotech" class="filter-cb ind-cb"> Biotech</label>
+            <label class="filter-label"><input type="checkbox" checked value="MedTech" class="filter-cb ind-cb"> MedTech</label>
+            <label class="filter-label"><input type="checkbox" checked value="General Healthcare" class="filter-cb ind-cb"> General Healthcare</label>
         </div>
 
-        <!-- UPDATE TYPE -->
         <div class="filter-section">
             <div class="filter-header">Update Type</div>
-            <label class="filter-label"><input type="checkbox" checked value="Guidance Draft" class="type-cb"> Guidance Draft</label>
-            <label class="filter-label"><input type="checkbox" checked value="Guidance Final" class="type-cb"> Guidance Final</label>
-            <label class="filter-label"><input type="checkbox" checked value="Regulation" class="type-cb"> Regulation</label>
-            <label class="filter-label"><input type="checkbox" checked value="Product Approval" class="type-cb"> Product Approval</label>
-            <label class="filter-label"><input type="checkbox" checked value="News" class="type-cb"> News</label>
+            <label class="filter-label"><input type="checkbox" checked value="Guidance Draft" class="filter-cb type-cb"> Guidance Draft</label>
+            <label class="filter-label"><input type="checkbox" checked value="Guidance Final" class="filter-cb type-cb"> Guidance Final</label>
+            <label class="filter-label"><input type="checkbox" checked value="Regulation" class="filter-cb type-cb"> Regulation</label>
+            <label class="filter-label"><input type="checkbox" checked value="Product Approval" class="filter-cb type-cb"> Product Approval</label>
+            <label class="filter-label"><input type="checkbox" checked value="News" class="filter-cb type-cb"> News</label>
         </div>
 
-        <!-- DATE RANGE -->
         <div class="filter-section">
             <div class="filter-header">Date Range</div>
             <div class="date-input-group">
                 <label>From</label>
-                <input type="date" id="date-start" class="date-field" value="2025-01-01" onchange="render()">
+                <input type="date" id="date-start" class="date-field" value="2025-01-01">
             </div>
             <div class="date-input-group">
                 <label>To</label>
-                <input type="date" id="date-end" class="date-field" value="2026-12-31" onchange="render()">
+                <input type="date" id="date-end" class="date-field" value="2026-12-31">
             </div>
         </div>
     </aside>
@@ -202,7 +191,7 @@
     <main class="main-container">
         <header class="top-bar">
             <div class="search-wrapper">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search updates..." onkeyup="handleSearch()">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search updates...">
             </div>
             <button class="fetch-btn" onclick="fetchUpdates()" id="fetchBtn">
                 <div class="spinner" id="btnSpinner"></div>
@@ -215,7 +204,7 @@
                 <h1 style="margin:0; font-size: 1.7rem; display: inline-block;" id="viewTitle">Latest Regulatory Updates</h1>
                 <span class="live-green" style="background:var(--live-green); color:var(--live-green-text); padding:4px 8px; border-radius:5px; font-size:0.75rem; font-weight:800; margin-left:12px; vertical-align:middle;">● LIVE</span>
                 <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 8px;">
-                    Last global scan: <span id="scanTime">1/21/2026 12:46 PM</span>
+                    Last global scan: <span id="scanTime">1/29/2026 10:00 AM</span>
                 </div>
             </div>
             <div class="card-grid" id="cardGrid"></div>
@@ -225,57 +214,20 @@
 
 <script>
     const allUpdates = [
-        {
-            title: "US FDA Approves Waskyra for Wiskott-Aldrich Syndrome",
-            desc: "The first cell-based gene therapy for pediatric patients aged 6 months and older with WAS approved under accelerated pathway.",
-            agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval",
-            impact: "High Impact", iClass: "impact-high", date: "2025-12-09", url: "https://www.fda.gov", view: "dashboard"
-        },
-        {
-            title: "EMA (EU) Releases Draft Guideline on Quality Aspects of Phage Therapy",
-            desc: "New considerations for the development and manufacturing of bacteriophage-based medicinal products in the EU.",
-            agency: "EMA (EU)", industry: "Biotech", type: "Guidance Draft",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-15", url: "https://www.ema.europa.eu", view: "dashboard"
-        },
-        {
-            title: "NMPA (China) Issues CAR-T Long-term Follow-up Guide",
-            desc: "Public consultation on safety monitoring requirements for patients receiving CAR-T therapy for up to 15 years post-infusion.",
-            agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Guidance Draft",
-            impact: "High Impact", iClass: "impact-high", date: "2026-01-10", url: "https://www.nmpa.gov.cn", view: "dashboard"
-        },
-        {
-            title: "MHRA (UK) Announces 14-Day Clinical Trial Assessment Route",
-            desc: "A new expedited route for Phase I Biologic trials announced to bolster the UK's clinical research environment.",
-            agency: "MHRA (UK)", industry: "General Healthcare", type: "Regulation",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-14", url: "https://www.gov.uk/mhra", view: "dashboard"
-        },
-        {
-            title: "PMDA (Japan) Updated SAKIGAKE Designation Review List",
-            desc: "The PMDA has finalized the list of regenerative medicines eligible for priority review under the SAKIGAKE system.",
-            agency: "PMDA (Japan)", industry: "Biotech", type: "News",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-13", url: "https://www.pmda.go.jp", view: "dashboard"
-        },
-        {
-            title: "TGA (Australia) Mandatory Shortage Reporting for Critical Biologics",
-            desc: "Proposed changes to mandatory reporting requirements for critical biologic medicine supply disruptions.",
-            agency: "TGA (Australia)", industry: "Biopharma", type: "Regulation",
-            impact: "High Impact", iClass: "impact-high", date: "2026-01-12", url: "https://www.tga.gov.au", view: "dashboard"
-        },
-        {
-            title: "Archive: Initial Regulatory Framework for CRISPR Therapeutics",
-            desc: "A retrospective look at the early guidelines established for clinical oversight of CRISPR/Cas9 edited cell therapies.",
-            agency: "US FDA", industry: "Cell & Gene Therapy", type: "Guidance Final",
-            impact: "Medium Impact", iClass: "impact-med", date: "2025-04-10", url: "https://www.fda.gov", view: "archive"
-        }
+        { title: "US FDA Approves Waskyra for Wiskott-Aldrich Syndrome", desc: "The first cell-based gene therapy for WAS approved.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval", impact: "High Impact", iClass: "impact-high", date: "2025-12-09", url: "https://www.fda.gov", view: "dashboard" },
+        { title: "EMA (EU) Releases Draft Guideline on Phage Therapy", desc: "New considerations for bacteriophage-based products.", agency: "EMA (EU)", industry: "Biotech", type: "Guidance Draft", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-15", url: "https://www.ema.europa.eu", view: "dashboard" },
+        { title: "NMPA (China) Issues CAR-T Long-term Follow-up Guide", desc: "Safety monitoring for CAR-T therapy for 15 years.", agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Guidance Draft", impact: "High Impact", iClass: "impact-high", date: "2026-01-10", url: "https://www.nmpa.gov.cn", view: "dashboard" },
+        { title: "MHRA (UK) Announces 14-Day Clinical Trial Assessment", desc: "Expedited route for Phase I Biologic trials.", agency: "MHRA (UK)", industry: "General Healthcare", type: "Regulation", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-14", url: "https://www.gov.uk/mhra", view: "dashboard" },
+        { title: "PMDA (Japan) Updated SAKIGAKE Review List", desc: "Priority review for regenerative medicines.", agency: "PMDA (Japan)", industry: "Biotech", type: "News", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-13", url: "https://www.pmda.go.jp", view: "dashboard" },
+        { title: "TGA (Australia) Mandatory Shortage Reporting", desc: "Supply disruption reporting for critical biologics.", agency: "TGA (Australia)", industry: "Biopharma", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2026-01-12", url: "https://www.tga.gov.au", view: "dashboard" },
+        { title: "Archive: Regulatory Framework for CRISPR", desc: "Early guidelines for clinical oversight of CRISPR.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Guidance Final", impact: "Medium Impact", iClass: "impact-med", date: "2025-04-10", url: "https://www.fda.gov", view: "archive" }
     ];
 
     let currentView = 'dashboard';
-    let searchQuery = '';
 
     function render() {
         const grid = document.getElementById('cardGrid');
-        grid.innerHTML = '';
-
+        const searchQuery = document.getElementById('searchInput').value.toLowerCase();
         const start = new Date(document.getElementById('date-start').value);
         const end = new Date(document.getElementById('date-end').value);
         
@@ -283,27 +235,30 @@
         const activeIndustries = Array.from(document.querySelectorAll('.ind-cb:checked')).map(cb => cb.value);
         const activeTypes = Array.from(document.querySelectorAll('.type-cb:checked')).map(cb => cb.value);
 
+        grid.innerHTML = '';
+
         let filtered = allUpdates.filter(item => {
             const itemDate = new Date(item.date);
             
-            // Tab Filter
+            // Tab Logic
             const matchesTab = (currentView === 'dashboard' && item.view === 'dashboard') ||
                                (currentView === 'archive' && item.view === 'archive') ||
                                (currentView === 'weekly' && item.industry === 'Cell & Gene Therapy' && item.view === 'dashboard');
+
+            if (!matchesTab) return false;
 
             // Metadata Filters
             const matchesAgency = activeAgencies.includes(item.agency);
             const matchesIndustry = activeIndustries.includes(item.industry);
             const matchesType = activeTypes.includes(item.type);
             const matchesDate = itemDate >= start && itemDate <= end;
-            const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                  item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+            const matchesSearch = item.title.toLowerCase().includes(searchQuery) || item.desc.toLowerCase().includes(searchQuery);
 
-            return matchesTab && matchesAgency && matchesIndustry && matchesType && matchesDate && matchesSearch;
+            return matchesAgency && matchesIndustry && matchesType && matchesDate && matchesSearch;
         });
 
         if (filtered.length === 0) {
-            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px 0; color: #94a3b8; font-size: 0.95rem;">No regulatory updates found for the selected criteria.</div>`;
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px 0; color: #94a3b8;">No results found.</div>`;
             return;
         }
 
@@ -331,20 +286,14 @@
         currentView = viewId;
         document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
         document.getElementById(`nav-${viewId}`).classList.add('active');
-        const titles = { dashboard: 'Latest Regulatory Updates', weekly: 'CGT Weekly Round-up', archive: 'Historical Archive (3M - 1Y)' };
+        const titles = { dashboard: 'Latest Regulatory Updates', weekly: 'CGT Weekly Round-up', archive: 'Historical Archive' };
         document.getElementById('viewTitle').innerText = titles[viewId];
-        render();
-    }
-
-    function handleSearch() {
-        searchQuery = document.getElementById('searchInput').value;
         render();
     }
 
     function fetchUpdates() {
         const btn = document.getElementById('fetchBtn'), spinner = document.getElementById('btnSpinner'), label = document.getElementById('btnLabel');
         btn.disabled = true; spinner.style.display = 'block'; label.style.display = 'none';
-        
         setTimeout(() => {
             btn.disabled = false; spinner.style.display = 'none'; label.style.display = 'block';
             document.getElementById('scanTime').innerText = new Date().toLocaleString();
@@ -352,375 +301,14 @@
         }, 800);
     }
 
-    // Initialize Checkbox listeners
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', render);
-    });
-
-    window.onload = render;
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RegWatch | Life Sciences Regulatory Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #0047ab;
-            --sidebar-bg: #f8fafc;
-            --card-border: #e2e8f0;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --high-impact: #fee2e2;
-            --high-impact-text: #991b1b;
-            --med-impact: #fef3c7;
-            --med-impact-text: #92400e;
-            --tag-blue: #dbeafe;
-            --tag-blue-text: #1e40af;
-            --live-green: #dcfce7;
-            --live-green-text: #166534;
-        }
-
-        * { box-sizing: border-box; }
-        
-        body, html {
-            margin: 0; padding: 0; height: 100%;
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff; color: var(--text-dark);
-            overflow: hidden; 
-        }
-
-        .app-wrapper { display: flex; height: 100vh; width: 100vw; }
-
-        /* --- SIDEBAR (SCROLLABLE) --- */
-        .sidebar {
-            width: 290px; background: var(--sidebar-bg);
-            border-right: 1px solid var(--card-border);
-            display: flex; flex-direction: column;
-            padding: 24px; flex-shrink: 0;
-            overflow-y: auto; height: 100%;
-        }
-
-        .sidebar::-webkit-scrollbar { width: 5px; }
-        .sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-
-        .logo {
-            display: flex; align-items: center; gap: 12px;
-            font-size: 1.4rem; font-weight: 800;
-            color: var(--primary-blue); margin-bottom: 30px;
-            flex-shrink: 0;
-        }
-
-        .nav-group { margin-bottom: 30px; flex-shrink: 0; }
-        .nav-item {
-            display: flex; align-items: center; padding: 10px 12px;
-            border-radius: 8px; color: var(--text-light);
-            font-size: 0.9rem; font-weight: 500;
-            margin-bottom: 4px; cursor: pointer; transition: 0.2s;
-        }
-        .nav-item.active { background: #eff6ff; color: var(--primary-blue); font-weight: 600; }
-
-        .filter-section { margin-bottom: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px; flex-shrink: 0; }
-        .filter-header {
-            font-size: 0.7rem; text-transform: uppercase;
-            letter-spacing: 0.05em; color: #94a3b8;
-            font-weight: 800; margin-bottom: 15px;
-        }
-
-        .filter-label {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 0.85rem; margin-bottom: 10px;
-            cursor: pointer; color: var(--text-dark);
-        }
-        .filter-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary-blue); }
-
-        .date-input-group { margin-bottom: 15px; }
-        .date-input-group label { display: block; font-size: 0.75rem; color: var(--text-light); margin-bottom: 5px; }
-        .date-field {
-            width: 100%; padding: 8px; border: 1px solid var(--card-border);
-            border-radius: 6px; font-family: inherit; font-size: 0.85rem; outline: none;
-        }
-
-        /* --- MAIN CONTENT --- */
-        .main-container { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-
-        .top-bar {
-            height: 72px; padding: 0 40px; display: flex;
-            justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--card-border); background: white;
-            flex-shrink: 0;
-        }
-
-        .search-wrapper { width: 450px; }
-        .search-input {
-            width: 100%; padding: 12px 16px; border: 1px solid var(--card-border);
-            border-radius: 10px; background: #f8fafc; font-size: 0.95rem; outline: none;
-        }
-
-        .fetch-btn {
-            background: var(--primary-blue); color: white; border: none;
-            padding: 12px 20px; border-radius: 8px; font-weight: 600;
-            cursor: pointer; display: flex; align-items: center; gap: 10px;
-        }
-
-        .content-scroll { flex: 1; overflow-y: auto; padding: 40px; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 24px; }
-
-        .card {
-            background: white; border: 1px solid var(--card-border);
-            border-radius: 12px; padding: 24px; display: flex; flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
-
-        .tag-row { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-        .tag { font-size: 0.65rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; }
-        .tag-agency { background: var(--tag-blue); color: var(--tag-blue-text); }
-        .tag-type { background: #f1f5f9; color: #475569; }
-        .tag-impact { margin-left: auto; }
-        .impact-high { background: var(--high-impact); color: var(--high-impact-text); }
-        .impact-med { background: var(--med-impact); color: var(--med-impact-text); }
-
-        .card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 12px 0; line-height: 1.4; color: #0f172a; }
-        .card-desc { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
-
-        .card-footer {
-            padding-top: 16px; border-top: 1px solid #f1f5f9;
-            display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8;
-        }
-        .source-link { color: var(--primary-blue); font-weight: 700; text-decoration: none; }
-        .source-link:hover { text-decoration: underline; }
-
-        .spinner {
-            width: 16px; height: 16px; border: 2px solid white; border-top: 2px solid transparent;
-            border-radius: 50%; animation: spin 0.8s linear infinite; display: none;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-    </style>
-</head>
-<body>
-
-<div class="app-wrapper">
-    <aside class="sidebar">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>RegWatch</span>
-        </div>
-
-        <nav class="nav-group">
-            <div class="nav-item active" id="nav-dashboard" onclick="switchView('dashboard')">Dashboard</div>
-            <div class="nav-item" id="nav-weekly" onclick="switchView('weekly')">CGT Weekly Round-up</div>
-            <div class="nav-item" id="nav-archive" onclick="switchView('archive')">Archive (3M - 1Y)</div>
-        </nav>
-
-        <!-- AGENCIES -->
-        <div class="filter-section">
-            <div class="filter-header">Agencies</div>
-            <label class="filter-label"><input type="checkbox" checked value="US FDA" class="agency-cb"> US FDA</label>
-            <label class="filter-label"><input type="checkbox" checked value="EMA (EU)" class="agency-cb"> EMA (EU)</label>
-            <label class="filter-label"><input type="checkbox" checked value="NMPA (China)" class="agency-cb"> NMPA (China)</label>
-            <label class="filter-label"><input type="checkbox" checked value="MHRA (UK)" class="agency-cb"> MHRA (UK)</label>
-            <label class="filter-label"><input type="checkbox" checked value="PMDA (Japan)" class="agency-cb"> PMDA (Japan)</label>
-            <label class="filter-label"><input type="checkbox" checked value="TGA (Australia)" class="agency-cb"> TGA (Australia)</label>
-        </div>
-
-        <!-- INDUSTRY SEGMENT -->
-        <div class="filter-section">
-            <div class="filter-header">Industry Segment</div>
-            <label class="filter-label"><input type="checkbox" checked value="Cell & Gene Therapy" class="ind-cb"> Cell & Gene Therapy</label>
-            <label class="filter-label"><input type="checkbox" checked value="Biopharma" class="ind-cb"> Biopharma</label>
-            <label class="filter-label"><input type="checkbox" checked value="Biotech" class="ind-cb"> Biotech</label>
-            <label class="filter-label"><input type="checkbox" checked value="MedTech" class="ind-cb"> MedTech</label>
-            <label class="filter-label"><input type="checkbox" checked value="General Healthcare" class="ind-cb"> General Healthcare</label>
-        </div>
-
-        <!-- UPDATE TYPE -->
-        <div class="filter-section">
-            <div class="filter-header">Update Type</div>
-            <label class="filter-label"><input type="checkbox" checked value="Guidance Draft" class="type-cb"> Guidance Draft</label>
-            <label class="filter-label"><input type="checkbox" checked value="Guidance Final" class="type-cb"> Guidance Final</label>
-            <label class="filter-label"><input type="checkbox" checked value="Regulation" class="type-cb"> Regulation</label>
-            <label class="filter-label"><input type="checkbox" checked value="Product Approval" class="type-cb"> Product Approval</label>
-            <label class="filter-label"><input type="checkbox" checked value="News" class="type-cb"> News</label>
-        </div>
-
-        <!-- DATE RANGE -->
-        <div class="filter-section">
-            <div class="filter-header">Date Range</div>
-            <div class="date-input-group">
-                <label>From</label>
-                <input type="date" id="date-start" class="date-field" value="2025-01-01" onchange="render()">
-            </div>
-            <div class="date-input-group">
-                <label>To</label>
-                <input type="date" id="date-end" class="date-field" value="2026-12-31" onchange="render()">
-            </div>
-        </div>
-    </aside>
-
-    <main class="main-container">
-        <header class="top-bar">
-            <div class="search-wrapper">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search updates..." onkeyup="handleSearch()">
-            </div>
-            <button class="fetch-btn" onclick="fetchUpdates()" id="fetchBtn">
-                <div class="spinner" id="btnSpinner"></div>
-                <span id="btnLabel">Fetch Latest Global Updates</span>
-            </button>
-        </header>
-
-        <section class="content-scroll">
-            <div style="margin-bottom: 35px;">
-                <h1 style="margin:0; font-size: 1.7rem; display: inline-block;" id="viewTitle">Latest Regulatory Updates</h1>
-                <span class="live-green" style="background:var(--live-green); color:var(--live-green-text); padding:4px 8px; border-radius:5px; font-size:0.75rem; font-weight:800; margin-left:12px; vertical-align:middle;">● LIVE</span>
-                <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 8px;">
-                    Last global scan: <span id="scanTime">1/21/2026 12:46 PM</span>
-                </div>
-            </div>
-            <div class="card-grid" id="cardGrid"></div>
-        </section>
-    </main>
-</div>
-
-<script>
-    const allUpdates = [
-        {
-            title: "US FDA Approves Waskyra for Wiskott-Aldrich Syndrome",
-            desc: "The first cell-based gene therapy for pediatric patients aged 6 months and older with WAS approved under accelerated pathway.",
-            agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval",
-            impact: "High Impact", iClass: "impact-high", date: "2025-12-09", url: "https://www.fda.gov", view: "dashboard"
-        },
-        {
-            title: "EMA (EU) Releases Draft Guideline on Quality Aspects of Phage Therapy",
-            desc: "New considerations for the development and manufacturing of bacteriophage-based medicinal products in the EU.",
-            agency: "EMA (EU)", industry: "Biotech", type: "Guidance Draft",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-15", url: "https://www.ema.europa.eu", view: "dashboard"
-        },
-        {
-            title: "NMPA (China) Issues CAR-T Long-term Follow-up Guide",
-            desc: "Public consultation on safety monitoring requirements for patients receiving CAR-T therapy for up to 15 years post-infusion.",
-            agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Guidance Draft",
-            impact: "High Impact", iClass: "impact-high", date: "2026-01-10", url: "https://www.nmpa.gov.cn", view: "dashboard"
-        },
-        {
-            title: "MHRA (UK) Announces 14-Day Clinical Trial Assessment Route",
-            desc: "A new expedited route for Phase I Biologic trials announced to bolster the UK's clinical research environment.",
-            agency: "MHRA (UK)", industry: "General Healthcare", type: "Regulation",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-14", url: "https://www.gov.uk/mhra", view: "dashboard"
-        },
-        {
-            title: "PMDA (Japan) Updated SAKIGAKE Designation Review List",
-            desc: "The PMDA has finalized the list of regenerative medicines eligible for priority review under the SAKIGAKE system.",
-            agency: "PMDA (Japan)", industry: "Biotech", type: "News",
-            impact: "Medium Impact", iClass: "impact-med", date: "2026-01-13", url: "https://www.pmda.go.jp", view: "dashboard"
-        },
-        {
-            title: "TGA (Australia) Mandatory Shortage Reporting for Critical Biologics",
-            desc: "Proposed changes to mandatory reporting requirements for critical biologic medicine supply disruptions.",
-            agency: "TGA (Australia)", industry: "Biopharma", type: "Regulation",
-            impact: "High Impact", iClass: "impact-high", date: "2026-01-12", url: "https://www.tga.gov.au", view: "dashboard"
-        },
-        {
-            title: "Archive: Initial Regulatory Framework for CRISPR Therapeutics",
-            desc: "A retrospective look at the early guidelines established for clinical oversight of CRISPR/Cas9 edited cell therapies.",
-            agency: "US FDA", industry: "Cell & Gene Therapy", type: "Guidance Final",
-            impact: "Medium Impact", iClass: "impact-med", date: "2025-04-10", url: "https://www.fda.gov", view: "archive"
-        }
-    ];
-
-    let currentView = 'dashboard';
-    let searchQuery = '';
-
-    function render() {
-        const grid = document.getElementById('cardGrid');
-        grid.innerHTML = '';
-
-        const start = new Date(document.getElementById('date-start').value);
-        const end = new Date(document.getElementById('date-end').value);
-        
-        const activeAgencies = Array.from(document.querySelectorAll('.agency-cb:checked')).map(cb => cb.value);
-        const activeIndustries = Array.from(document.querySelectorAll('.ind-cb:checked')).map(cb => cb.value);
-        const activeTypes = Array.from(document.querySelectorAll('.type-cb:checked')).map(cb => cb.value);
-
-        let filtered = allUpdates.filter(item => {
-            const itemDate = new Date(item.date);
-            
-            // Tab Filter
-            const matchesTab = (currentView === 'dashboard' && item.view === 'dashboard') ||
-                               (currentView === 'archive' && item.view === 'archive') ||
-                               (currentView === 'weekly' && item.industry === 'Cell & Gene Therapy' && item.view === 'dashboard');
-
-            // Metadata Filters
-            const matchesAgency = activeAgencies.includes(item.agency);
-            const matchesIndustry = activeIndustries.includes(item.industry);
-            const matchesType = activeTypes.includes(item.type);
-            const matchesDate = itemDate >= start && itemDate <= end;
-            const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                  item.desc.toLowerCase().includes(searchQuery.toLowerCase());
-
-            return matchesTab && matchesAgency && matchesIndustry && matchesType && matchesDate && matchesSearch;
+    // Single source of truth for events
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.filter-cb, .date-field').forEach(el => {
+            el.addEventListener('change', render);
         });
-
-        if (filtered.length === 0) {
-            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px 0; color: #94a3b8; font-size: 0.95rem;">No regulatory updates found for the selected criteria.</div>`;
-            return;
-        }
-
-        filtered.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <div class="tag-row">
-                    <span class="tag tag-agency">${item.agency}</span>
-                    <span class="tag tag-type">${item.type}</span>
-                    <span class="tag tag-impact ${item.iClass}">${item.impact}</span>
-                </div>
-                <h3 class="card-title">${item.title}</h3>
-                <p class="card-desc">${item.desc}</p>
-                <div class="card-footer">
-                    <span>📅 ${item.date}</span>
-                    <a href="${item.url}" target="_blank" class="source-link">Source ↗</a>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-
-    function switchView(viewId) {
-        currentView = viewId;
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        document.getElementById(`nav-${viewId}`).classList.add('active');
-        const titles = { dashboard: 'Latest Regulatory Updates', weekly: 'CGT Weekly Round-up', archive: 'Historical Archive (3M - 1Y)' };
-        document.getElementById('viewTitle').innerText = titles[viewId];
-        render();
-    }
-
-    function handleSearch() {
-        searchQuery = document.getElementById('searchInput').value;
-        render();
-    }
-
-    function fetchUpdates() {
-        const btn = document.getElementById('fetchBtn'), spinner = document.getElementById('btnSpinner'), label = document.getElementById('btnLabel');
-        btn.disabled = true; spinner.style.display = 'block'; label.style.display = 'none';
-        
-        setTimeout(() => {
-            btn.disabled = false; spinner.style.display = 'none'; label.style.display = 'block';
-            document.getElementById('scanTime').innerText = new Date().toLocaleString();
-            render();
-        }, 800);
-    }
-
-    // Initialize Checkbox listeners
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', render);
+        document.getElementById('searchInput').addEventListener('keyup', render);
+        render(); // Initial load
     });
-
-    window.onload = render;
 </script>
 
 </body>
