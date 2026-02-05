@@ -23,89 +23,35 @@
         }
 
         * { box-sizing: border-box; }
-        
-        body, html {
-            margin: 0; padding: 0; height: 100%;
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff; color: var(--text-dark);
-            overflow: hidden; 
-        }
-
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; background-color: #ffffff; color: var(--text-dark); overflow: hidden; }
         .app-wrapper { display: flex; height: 100vh; width: 100vw; }
 
-        .sidebar {
-            width: 290px; background: var(--sidebar-bg);
-            border-right: 1px solid var(--card-border);
-            display: flex; flex-direction: column;
-            padding: 24px; flex-shrink: 0;
-            overflow-y: auto; height: 100%;
-        }
-
-        .logo {
-            display: flex; align-items: center; gap: 12px;
-            font-size: 1.4rem; font-weight: 800;
-            color: var(--primary-blue); margin-bottom: 30px;
-        }
-
+        .sidebar { width: 290px; background: var(--sidebar-bg); border-right: 1px solid var(--card-border); display: flex; flex-direction: column; padding: 24px; flex-shrink: 0; overflow-y: auto; height: 100%; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 1.4rem; font-weight: 800; color: var(--primary-blue); margin-bottom: 30px; }
+        
         .nav-group { margin-bottom: 30px; }
-        .nav-item {
-            display: flex; align-items: center; padding: 10px 12px;
-            border-radius: 8px; color: var(--text-light);
-            font-size: 0.9rem; font-weight: 500;
-            margin-bottom: 4px; cursor: pointer; transition: 0.2s;
-        }
+        .nav-item { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; color: var(--text-light); font-size: 0.9rem; font-weight: 500; margin-bottom: 4px; cursor: pointer; transition: 0.2s; }
         .nav-item.active { background: #eff6ff; color: var(--primary-blue); font-weight: 600; }
 
         .filter-section { margin-bottom: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
-        .filter-header {
-            font-size: 0.7rem; text-transform: uppercase;
-            letter-spacing: 0.05em; color: #94a3b8;
-            font-weight: 800; margin-bottom: 15px;
-        }
-
-        .filter-label {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 0.85rem; margin-bottom: 10px;
-            cursor: pointer; color: var(--text-dark);
-        }
+        .filter-header { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; font-weight: 800; margin-bottom: 15px; }
+        .filter-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; margin-bottom: 10px; cursor: pointer; color: var(--text-dark); }
         .filter-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary-blue); }
 
         .date-input-group { margin-bottom: 15px; }
         .date-input-group label { display: block; font-size: 0.75rem; color: var(--text-light); margin-bottom: 5px; }
-        .date-field {
-            width: 100%; padding: 8px; border: 1px solid var(--card-border);
-            border-radius: 6px; font-family: inherit; font-size: 0.85rem; outline: none;
-        }
+        .date-field { width: 100%; padding: 8px; border: 1px solid var(--card-border); border-radius: 6px; font-family: inherit; font-size: 0.85rem; outline: none; }
 
         .main-container { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-
-        .top-bar {
-            height: 72px; padding: 0 40px; display: flex;
-            justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--card-border); background: white;
-            flex-shrink: 0;
-        }
-
+        .top-bar { height: 72px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--card-border); background: white; flex-shrink: 0; }
         .search-wrapper { width: 450px; }
-        .search-input {
-            width: 100%; padding: 12px 16px; border: 1px solid var(--card-border);
-            border-radius: 10px; background: #f8fafc; font-size: 0.95rem; outline: none;
-        }
+        .search-input { width: 100%; padding: 12px 16px; border: 1px solid var(--card-border); border-radius: 10px; background: #f8fafc; font-size: 0.95rem; outline: none; }
 
-        .fetch-btn {
-            background: var(--primary-blue); color: white; border: none;
-            padding: 12px 20px; border-radius: 8px; font-weight: 600;
-            cursor: pointer; display: flex; align-items: center; gap: 10px;
-        }
-
+        .fetch-btn { background: var(--primary-blue); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; }
         .content-scroll { flex: 1; overflow-y: auto; padding: 40px; }
         .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 24px; }
 
-        .card {
-            background: white; border: 1px solid var(--card-border);
-            border-radius: 12px; padding: 24px; display: flex; flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+        .card { background: white; border: 1px solid var(--card-border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
 
         .tag-row { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -118,17 +64,10 @@
 
         .card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 12px 0; line-height: 1.4; color: #0f172a; }
         .card-desc { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
-
-        .card-footer {
-            padding-top: 16px; border-top: 1px solid #f1f5f9;
-            display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8;
-        }
+        .card-footer { padding-top: 16px; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8; }
         .source-link { color: var(--primary-blue); font-weight: 700; text-decoration: none; }
 
-        .spinner {
-            width: 16px; height: 16px; border: 2px solid white; border-top: 2px solid transparent;
-            border-radius: 50%; animation: spin 0.8s linear infinite; display: none;
-        }
+        .spinner { width: 16px; height: 16px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 0.8s linear infinite; display: none; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 </head>
@@ -142,9 +81,8 @@
         </div>
 
         <nav class="nav-group">
-            <div class="nav-item active" id="nav-dashboard" onclick="switchView('dashboard')">Dashboard</div>
-            <div class="nav-item" id="nav-weekly" onclick="switchView('weekly')">CGT Weekly Round-up</div>
-            <div class="nav-item" id="nav-archive" onclick="switchView('archive')">Archive (3M - 1Y)</div>
+            <div class="nav-item active" id="nav-dashboard" onclick="switchView('dashboard')">Dashboard (2025)</div>
+            <div class="nav-item" id="nav-archive" onclick="switchView('archive')">Archive (2023-24)</div>
         </nav>
 
         <div class="filter-section">
@@ -191,20 +129,20 @@
     <main class="main-container">
         <header class="top-bar">
             <div class="search-wrapper">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search updates...">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search milestones...">
             </div>
             <button class="fetch-btn" onclick="fetchUpdates()" id="fetchBtn">
                 <div class="spinner" id="btnSpinner"></div>
-                <span id="btnLabel">Fetch Latest Global Updates</span>
+                <span id="btnLabel">Sync Live Data</span>
             </button>
         </header>
 
         <section class="content-scroll">
             <div style="margin-bottom: 35px;">
-                <h1 style="margin:0; font-size: 1.7rem; display: inline-block;" id="viewTitle">Latest Regulatory Updates</h1>
+                <h1 style="margin:0; font-size: 1.7rem; display: inline-block;" id="viewTitle">2025 Regulatory Dashboard</h1>
                 <span class="live-green" style="background:var(--live-green); color:var(--live-green-text); padding:4px 8px; border-radius:5px; font-size:0.75rem; font-weight:800; margin-left:12px; vertical-align:middle;">● LIVE</span>
                 <div style="font-size: 0.85rem; color: var(--text-light); margin-top: 8px;">
-                    Last global scan: <span id="scanTime">1/29/2026 10:00 AM</span>
+                    Last scan: <span id="scanTime">Feb 05, 2025</span>
                 </div>
             </div>
             <div class="card-grid" id="cardGrid"></div>
@@ -214,14 +152,178 @@
 
 <script>
     const allUpdates = [
-        { title: "US FDA Approves Waskyra for Wiskott-Aldrich Syndrome", desc: "The first cell-based gene therapy for WAS approved.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval", impact: "High Impact", iClass: "impact-high", date: "2025-12-09", url: "https://www.fda.gov", view: "dashboard" },
-        { title: "EMA (EU) Releases Draft Guideline on Phage Therapy", desc: "New considerations for bacteriophage-based products.", agency: "EMA (EU)", industry: "Biotech", type: "Guidance Draft", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-15", url: "https://www.ema.europa.eu", view: "dashboard" },
-        { title: "NMPA (China) Issues CAR-T Long-term Follow-up Guide", desc: "Safety monitoring for CAR-T therapy for 15 years.", agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Guidance Draft", impact: "High Impact", iClass: "impact-high", date: "2026-01-10", url: "https://www.nmpa.gov.cn", view: "dashboard" },
-        { title: "MHRA (UK) Announces 14-Day Clinical Trial Assessment", desc: "Expedited route for Phase I Biologic trials.", agency: "MHRA (UK)", industry: "General Healthcare", type: "Regulation", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-14", url: "https://www.gov.uk/mhra", view: "dashboard" },
-        { title: "PMDA (Japan) Updated SAKIGAKE Review List", desc: "Priority review for regenerative medicines.", agency: "PMDA (Japan)", industry: "Biotech", type: "News", impact: "Medium Impact", iClass: "impact-med", date: "2026-01-13", url: "https://www.pmda.go.jp", view: "dashboard" },
-        { title: "TGA (Australia) Mandatory Shortage Reporting", desc: "Supply disruption reporting for critical biologics.", agency: "TGA (Australia)", industry: "Biopharma", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2026-01-12", url: "https://www.tga.gov.au", view: "dashboard" },
-        { title: "Archive: Regulatory Framework for CRISPR", desc: "Early guidelines for clinical oversight of CRISPR.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Guidance Final", impact: "Medium Impact", iClass: "impact-med", date: "2025-04-10", url: "https://www.fda.gov", view: "archive" }
-    ];
+        // --- US FDA 2025 ---
+        { title: "FDA: Final Guidance on Human Gene Therapy for Neurodegenerative Diseases", desc: "Finalized recommendations for study design and CMC requirements for gene therapies targeting Alzheimer’s and ALS.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Guidance Final", impact: "High Impact", iClass: "impact-high", date: "2025-01-28", url: "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/human-gene-therapy-neurodegenerative-diseases", view: "dashboard" },
+        { title: "FDA: LDT Final Rule - Stage 1 Implementation", desc: "Official start of Phase 1 of the Laboratory Developed Tests rule, requiring labs to comply with medical device reporting.", agency: "US FDA", industry: "MedTech", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-05-06", url: "https://www.fda.gov/medical-devices/vitro-diagnostics/laboratory-developed-tests", view: "dashboard" },
+        { title: "FDA: Launch of Platform Technology Designation Program", desc: "New 2025 implementation allowing companies to leverage pre-approved platforms (like mRNA) to speed up approvals.", agency: "US FDA", industry: "Biotech", type: "News", impact: "Medium Impact", iClass: "impact-med", date: "2025-02-10", url: "https://www.fda.gov/drugs/therapeutic-biologics-applications-bla/platform-technology-designation-program", view: "dashboard" },
+        { title: "FDA: Draft Guidance on AI and Machine Learning in Drug Development", desc: "Framework providing recommendations on using AI/ML for clinical trial enrichment and regulatory documentation.", agency: "US FDA", industry: "Biopharma", type: "Guidance Draft", impact: "High Impact", iClass: "impact-high", date: "2025-03-15", url: "https://www.fda.gov/science-research/science-and-research-special-topics/artificial-intelligence-and-machine-learning-drug-development", view: "dashboard" },
+        { title: "FDA: Expected 2025 Approval of OBX-115 TIL Therapy", desc: "Anticipated approval of a first-in-class engineered Tumor-Infiltrating Lymphocyte therapy for advanced melanoma.", agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval", impact: "High Impact", iClass: "impact-high", date: "2025-06-20", url: "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products", view: "dashboard" },
+
+        // --- EMA 2025 ---
+        { title: "EMA: Mandatory Health Technology Assessment (HTA) Regulation", desc: "New EU HTA Regulation becomes mandatory for all new oncology medicines and ATMPs for joint clinical assessments.", agency: "EMA (EU)", industry: "Biopharma", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-01-12", url: "https://health.ec.europa.eu/health-technology-assessment/regulation-hta_en", view: "dashboard" },
+        { title: "EMA: Mandatory Transition of Clinical Trials to CTIS", desc: "Final deadline for all ongoing trials in the EU to be transitioned to the Clinical Trials Information System.", agency: "EMA (EU)", industry: "Biopharma", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-01-31", url: "https://www.ema.europa.eu/en/human-regulatory-overview/clinical-trial-regulation", view: "dashboard" },
+        { title: "EMA: Finalized Framework for AI in Medicinal Products", desc: "Official adoption of the framework governing AI/ML in drug discovery and manufacturing processes.", agency: "EMA (EU)", industry: "Biotech", type: "Guidance Final", impact: "High Impact", iClass: "impact-high", date: "2025-04-15", url: "https://www.ema.europa.eu/en/news/reflection-paper-use-artificial-intelligence-lifecycle-medicinal-products", view: "dashboard" },
+        { title: "EMA: Draft Guidance on Decentralized ATMP Manufacturing", desc: "New considerations for gene therapies produced at the point of care rather than in central facilities.", agency: "EMA (EU)", industry: "Cell & Gene Therapy", type: "Guidance Draft", impact: "Medium Impact", iClass: "impact-med", date: "2025-06-05", url: "https://www.ema.europa.eu/en/human-regulatory-overview/advanced-therapy-medicinal-products-overview", view: "dashboard" },
+
+        // --- MHRA 2025 ---
+        { title: "MHRA: Implementation of the Windsor Framework", desc: "A single UK-wide regulatory system for medicines comes into effect, covering both Great Britain and Northern Ireland.", agency: "MHRA (UK)", industry: "General Healthcare", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-01-01", url: "https://www.gov.uk/government/publications/the-windsor-framework-and-medicines", view: "dashboard" },
+        { title: "MHRA: Final Guidance on Device Post-Market Surveillance (PMS)", desc: "New statutory requirements for manufacturers to report incidents and maintain safety signals.", agency: "MHRA (UK)", industry: "MedTech", type: "Guidance Final", impact: "High Impact", iClass: "impact-high", date: "2025-02-15", url: "https://www.gov.uk/government/publications/guidance-on-the-implementation-of-the-medical-devices-post-market-surveillance-requirements", view: "dashboard" },
+        { title: "MHRA: Updated IRP Pathway Provisions", desc: "Accelerated UK access by recognizing approvals from trusted partners like the FDA and EMA.", agency: "MHRA (UK)", industry: "Biopharma", type: "Guidance Draft", impact: "Medium Impact", iClass: "impact-med", date: "2025-03-20", url: "https://www.gov.uk/government/publications/international-recognition-procedure", view: "dashboard" },
+
+        // --- TGA 2025 ---
+        { title: "TGA: Final Deadline for IVD Regulation Reforms", desc: "Mandatory transition period concludes for In-Vitro Diagnostic manufacturers to comply with new Australian rules.", agency: "TGA (Australia)", industry: "MedTech", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-07-01", url: "https://www.tga.gov.au/how-we-regulate/manufacturing/medical-devices/ivd-regulation-reforms", view: "dashboard" },
+        { title: "TGA: Draft Guidance on AI-enabled Medical Devices", desc: "2025 considerations for lifecycle management and post-market monitoring of diagnostic AI software.", agency: "TGA (Australia)", industry: "MedTech", type: "Guidance Draft", impact: "High Impact", iClass: "impact-high", date: "2025-04-10", url: "https://www.tga.gov.au/resources/resource/guidance/software-medical-device-samd-clinical-evidence-guidelines", view: "dashboard" },
+ {
+        title: "TGA: Finalized Requirements for Personalized Medical Devices",
+        desc: "Updated 2025 framework for 3D-printed and custom-made medical devices, requiring increased conformity assessment and patient-matched device registration.",
+        agency: "TGA (Australia)", industry: "MedTech", type: "Guidance Final",
+        impact: "Medium Impact", iClass: "impact-med", date: "2025-02-14",
+        url: "https://www.tga.gov.au/products/medical-devices/personalised-medical-devices/overview/personalised-medical-devices", view: "dashboard"
+    },
+   {
+        title: "TGA: Phased Implementation of Unique Device Identifiers (UDI)",
+        desc: "Mandatory labeling and data submission requirements begin for high-risk medical devices to the Australian UDI database (AusUDID).",
+        agency: "TGA (Australia)", industry: "MedTech", type: "Regulation",
+        impact: "Medium Impact", iClass: "impact-med", date: "2025-01-20",
+        url: "https://www.tga.gov.au/products/medical-devices/labelling-and-advertising/unique-device-identification-udi-hub/udi-information-healthcare-providers", view: "dashboard"
+    },
+
+        // --- PMDA 2025 ---
+        { title: "PMDA: Finalized Guidelines on Decentralized Clinical Trials", desc: "Official 2025 standards for using remote monitoring and home nursing in Japanese trials.", agency: "PMDA (Japan)", industry: "General Healthcare", type: "Guidance Final", impact: "Medium Impact", iClass: "impact-med", date: "2025-03-12", url: "https://www.pmda.go.jp/english/review-services/reviews/0001.html", view: "dashboard" },
+        { title: "PMDA: CDISC Mandatory Data Submission Standards", desc: "New requirements for electronic submission of clinical trial data in XML for Japanese NDAs.", agency: "PMDA (Japan)", industry: "Biopharma", type: "Regulation", impact: "High Impact", iClass: "impact-high", date: "2025-01-20", url: "https://www.pmda.go.jp/english/review-services/reviews/0002.html", view: "dashboard" },
+ {
+        title: "PMDA: Expansion of the SAKIGAKE Pioneer Designation System",
+        desc: "New 2025 administrative rules to expand the 'Sakigake' pathway to include more orphan drugs and breakthrough regenerative therapies for early consultation.",
+        agency: "PMDA (Japan)", industry: "Biotech", type: "News",
+        impact: "High Impact", iClass: "impact-high", date: "2025-04-05",
+        url: "https://www.pmda.go.jp/english/review-services/reviews/advanced-efforts/0001.html", view: "dashboard"
+    },
+    {
+        title: "PMDA: Draft Quality Control Standards for Viral Vector Manufacturing",
+        desc: "New 2025 technical draft guidance specifically for the CMC (Chemistry, Manufacturing, and Controls) of viral vectors used in gene therapy products.",
+        agency: "PMDA (Japan)", industry: "Cell & Gene Therapy", type: "Guidance Draft",
+        impact: "Medium Impact", iClass: "impact-med", date: "2025-06-18",
+        url: "https://www.pmda.go.jp/files/000235607.pdf", view: "dashboard"
+    },
+    {
+        title: "PMDA: Expected 2025 Approval of Donanemab (Kisunla) for Alzheimer's",
+        desc: "Anticipated final regulatory decision for Eli Lilly's amyloid-targeting therapy, following the successful submission and review in Japan.",
+        agency: "PMDA (Japan)", industry: "Biopharma", type: "Product Approval",
+        impact: "High Impact", iClass: "impact-high", date: "2025-02-15",
+        url: "https://www.pmda.go.jp/files/000275604.pdf", view: "dashboard"
+    },
+
+        // --- NMPA 2025 ---
+        
+ {
+        title: "NMPA: Implementation of Accelerated Priority Review for Rare Diseases",
+        desc: "New 2025 regulatory measures to prioritize and shorten the review cycle of innovative rare disease drugs to 130 working days to address unmet clinical needs.",
+        agency: "NMPA (China)", industry: "Biopharma", type: "Regulation",
+        impact: "High Impact", iClass: "impact-high", date: "2025-01-05",
+        url: "https://www.nmpa.gov.cn/xxgk/ggtg/ypggtg/ypqtggtg/20230331154541165.html", view: "dashboard"
+    },
+    {
+        title: "NMPA: Final Technical Guidelines for Clinical Trials of TIL Therapies",
+        desc: "Official 2025 standards for the clinical design, safety monitoring, and efficacy evaluation for Tumor-Infiltrating Lymphocyte (TIL) therapies in oncology.",
+        agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Guidance Final",
+        impact: "High Impact", iClass: "impact-high", date: "2025-03-22",
+        url: "https://english.nmpa.gov.cn/2025-10/14/c_1132769.htm", view: "dashboard"
+    },
+    {
+        title: "NMPA: Draft Guidance on Real-World Data for Medical Device Submissions",
+        desc: "Updated 2025 framework for using Real-World Evidence (RWE) to support the clinical evaluation and registration of innovative medical devices in China.",
+        agency: "NMPA (China)", industry: "MedTech", type: "Guidance Draft",
+        impact: "Medium Impact", iClass: "impact-med", date: "2025-05-14",
+        url: "https://english.nmpa.gov.cn/2020-01/07/c_456245.htm", view: "dashboard"
+    },
+    {
+        title: "NMPA: Mandatory eCTD Submission for All Class I New Drugs",
+        desc: "Official transition deadline requiring all Class I innovative drug applications to be submitted using the electronic Common Technical Document (eCTD) system.",
+        agency: "NMPA (China)", industry: "Biotech", type: "Regulation",
+        impact: "Medium Impact", iClass: "impact-med", date: "2025-01-01",
+        url: "https://english.nmpa.gov.cn/2025-06/11/c_1102159.htm", view: "dashboard"
+    },
+    {
+        title: "NMPA: Expected 2025 Approval of Domestic BCMA CAR-T Therapy",
+        desc: "Anticipated final approval for a domestically developed CAR-T cell therapy targeting B-cell maturation antigen for multiple myeloma patients.",
+        agency: "NMPA (China)", industry: "Cell & Gene Therapy", type: "Product Approval",
+        impact: "High Impact", iClass: "impact-high", date: "2025-06-10",
+        url: "https://www.prnewswire.com/news-releases/nmpa-approves-the-nda-for-carsgens-bcma-car-t-therapy-zevorcabtagene-autoleucel-for-relapsed-or-refractory-multiple-myeloma-302076758.html", view: "dashboard"
+    },
+ // --- 2024 UPDATES (ARCHIVE) ---
+    { 
+        title: "FDA: Approval of Beqvez (Fidanacogene Elaparvovec)", 
+        desc: "Landmark approval of a one-time gene therapy for the treatment of adults with moderate to severe Hemophilia B.", 
+        agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval", 
+        impact: "High Impact", iClass: "impact-high", date: "2024-04-26", 
+        url: "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/beqvez", view: "archive" 
+    },
+    { 
+        title: "EMA: Revised Guideline on Environmental Risk Assessment (ERA)", 
+        desc: "New rules for assessing the impact of human medicinal products on the environment, particularly regarding antibiotics.", 
+        agency: "EMA (EU)", industry: "General Healthcare", type: "Guidance Final", 
+        impact: "Medium Impact", iClass: "impact-med", date: "2024-03-01", 
+        url: "https://www.ema.europa.eu", view: "archive" 
+    },
+    { 
+        title: "PMDA: Introduction of Sakigake Designation for In-Vitro Diagnostics", 
+        desc: "Expansion of the priority review system to include innovative IVDs and companion diagnostics.", 
+        agency: "PMDA (Japan)", industry: "MedTech", type: "Regulation", 
+        impact: "Medium Impact", iClass: "impact-med", date: "2024-02-15", 
+        url: "https://www.pmda.go.jp", view: "archive" 
+    },
+    { 
+        title: "FDA: Final Rule on Laboratory Developed Tests (LDTs)", 
+        desc: "A major shift in policy bringing LDTs under the same regulatory oversight as other In-Vitro Diagnostics (IVDs).", 
+        agency: "US FDA", industry: "MedTech", type: "Regulation", 
+        impact: "High Impact", iClass: "impact-high", date: "2024-05-06", 
+        url: "https://www.fda.gov", view: "archive" 
+    },
+    { 
+        title: "MHRA: New Regulatory Framework for Point of Care (POC) Manufacturing", 
+        desc: "First-of-its-kind regulation for medicines manufactured at the bedside, such as CAR-T cells and 3D-printed implants.", 
+        agency: "MHRA (UK)", industry: "Cell & Gene Therapy", type: "Regulation", 
+        impact: "High Impact", iClass: "impact-high", date: "2024-01-22", 
+        url: "https://www.gov.uk/mhra", view: "archive" 
+    },
+
+    // --- 2023 LATE UPDATES (ARCHIVE - 2 YEARS AGO) ---
+    { 
+        title: "FDA: Approval of Casgevy (Exagamglogene Autotemcel)", 
+        desc: "First FDA-approved therapy utilizing CRISPR/Cas9 gene-editing technology for Sickle Cell Disease.", 
+        agency: "US FDA", industry: "Cell & Gene Therapy", type: "Product Approval", 
+        impact: "High Impact", iClass: "impact-high", date: "2023-12-08", 
+        url: "https://www.fda.gov", view: "archive" 
+    },
+    { 
+        title: "EMA: Statement on Biosimilar Interchangeability", 
+        desc: "Joint HMA/EMA statement confirming that biosimilars approved in the EU are interchangeable with their reference products.", 
+        agency: "EMA (EU)", industry: "Biopharma", type: "News", 
+        impact: "High Impact", iClass: "impact-high", date: "2023-09-15", 
+        url: "https://www.ema.europa.eu", view: "archive" 
+    },
+    { 
+        title: "NMPA: Technical Guidelines for Clinical Trials of Oncolytic Viruses", 
+        desc: "Standardizing the design and endpoint selection for gene-modified viral therapies in oncology.", 
+        agency: "NMPA (China)", industry: "Biotech", type: "Guidance Final", 
+        impact: "Medium Impact", iClass: "impact-med", date: "2023-08-10", 
+        url: "https://www.nmpa.gov.cn", view: "archive" 
+    },
+    { 
+        title: "TGA: Adoption of EU Guidelines for Clinical Investigation of Medicines", 
+        desc: "Formal alignment of Australian clinical trial requirements with European Union standards (EMEA/CHMP).", 
+        agency: "TGA (Australia)", industry: "General Healthcare", type: "Regulation", 
+        impact: "Medium Impact", iClass: "impact-med", date: "2023-06-30", 
+        url: "https://www.tga.gov.au", view: "archive" 
+    },
+    { 
+        title: "PMDA: New Electronic Submission Standards (XML)", 
+        desc: "Mandatory requirement for electronic submission of clinical study reports and case report forms for new drug applications.", 
+        agency: "PMDA (Japan)", industry: "Biopharma", type: "Regulation", 
+        impact: "Medium Impact", iClass: "impact-med", date: "2023-04-01", 
+        url: "https://www.pmda.go.jp", view: "archive" 
+    }
+];
 
     let currentView = 'dashboard';
 
@@ -230,7 +332,7 @@
         const searchQuery = document.getElementById('searchInput').value.toLowerCase();
         const start = new Date(document.getElementById('date-start').value);
         const end = new Date(document.getElementById('date-end').value);
-        
+
         const activeAgencies = Array.from(document.querySelectorAll('.agency-cb:checked')).map(cb => cb.value);
         const activeIndustries = Array.from(document.querySelectorAll('.ind-cb:checked')).map(cb => cb.value);
         const activeTypes = Array.from(document.querySelectorAll('.type-cb:checked')).map(cb => cb.value);
@@ -239,26 +341,18 @@
 
         let filtered = allUpdates.filter(item => {
             const itemDate = new Date(item.date);
-            
-            // Tab Logic
-            const matchesTab = (currentView === 'dashboard' && item.view === 'dashboard') ||
-                               (currentView === 'archive' && item.view === 'archive') ||
-                               (currentView === 'weekly' && item.industry === 'Cell & Gene Therapy' && item.view === 'dashboard');
-
-            if (!matchesTab) return false;
-
-            // Metadata Filters
+            const matchesTab = (currentView === item.view);
             const matchesAgency = activeAgencies.includes(item.agency);
             const matchesIndustry = activeIndustries.includes(item.industry);
             const matchesType = activeTypes.includes(item.type);
             const matchesDate = itemDate >= start && itemDate <= end;
             const matchesSearch = item.title.toLowerCase().includes(searchQuery) || item.desc.toLowerCase().includes(searchQuery);
 
-            return matchesAgency && matchesIndustry && matchesType && matchesDate && matchesSearch;
+            return matchesTab && matchesAgency && matchesIndustry && matchesType && matchesDate && matchesSearch;
         });
 
         if (filtered.length === 0) {
-            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px 0; color: #94a3b8;">No results found.</div>`;
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px 0; color: #94a3b8;">No results match your criteria.</div>`;
             return;
         }
 
@@ -275,7 +369,7 @@
                 <p class="card-desc">${item.desc}</p>
                 <div class="card-footer">
                     <span>📅 ${item.date}</span>
-                    <a href="${item.url}" target="_blank" class="source-link">Source ↗</a>
+                    <a href="${item.url}" target="_blank" class="source-link">Source Page ↗</a>
                 </div>
             `;
             grid.appendChild(card);
@@ -286,8 +380,7 @@
         currentView = viewId;
         document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
         document.getElementById(`nav-${viewId}`).classList.add('active');
-        const titles = { dashboard: 'Latest Regulatory Updates', weekly: 'CGT Weekly Round-up', archive: 'Historical Archive' };
-        document.getElementById('viewTitle').innerText = titles[viewId];
+        document.getElementById('viewTitle').innerText = (viewId === 'dashboard') ? '2025 Regulatory Dashboard' : 'Historical Archive (2023-24)';
         render();
     }
 
@@ -296,20 +389,16 @@
         btn.disabled = true; spinner.style.display = 'block'; label.style.display = 'none';
         setTimeout(() => {
             btn.disabled = false; spinner.style.display = 'none'; label.style.display = 'block';
-            document.getElementById('scanTime').innerText = new Date().toLocaleString();
+            document.getElementById('scanTime').innerText = new Date().toDateString();
             render();
         }, 800);
     }
 
-    // Single source of truth for events
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.filter-cb, .date-field').forEach(el => {
-            el.addEventListener('change', render);
-        });
+        document.querySelectorAll('.filter-cb, .date-field').forEach(el => el.addEventListener('change', render));
         document.getElementById('searchInput').addEventListener('keyup', render);
-        render(); // Initial load
+        render();
     });
 </script>
-
 </body>
 </html>
